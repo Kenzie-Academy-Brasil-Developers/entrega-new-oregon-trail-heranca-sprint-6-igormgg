@@ -1,9 +1,9 @@
 const Traveler = require("./Traveler");
 
 class Hunter extends Traveler {
-    constructor(name) {
-        super(name)
-        this.food = 2
+    constructor(name, isHealthy, food) {
+        super(name, isHealthy)
+        this.food = Number(food)
     }
 
     hunt() {

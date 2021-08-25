@@ -1,8 +1,8 @@
 class Traveler {
-    constructor(name) {
+    constructor(name, isHealthy, food) {
         this.name = name
-        this.food = 1
-        this.isHealthy = true
+        this.food = Number(food)
+        this.isHealthy = isHealthy === 'true' ? true : false
     }
 
     hunt() {
