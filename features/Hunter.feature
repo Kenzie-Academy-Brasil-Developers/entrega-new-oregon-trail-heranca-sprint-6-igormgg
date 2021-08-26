@@ -14,13 +14,9 @@ Funcionalidade: Hunter
         Quando o Hunter caçar 1 vezes
         Então o Hunter fica com 7 refeições
 
-    Cenário: Comeu e seguiu saudável
-        Quando o Hunter comer 1 vezes
-        Então o Hunter fica com 0 refeições
-        E o Hunter não ficará doente
-
-    Cenário: Comeu e ficou doente
-        Quando o Hunter comer 2 vezes
+    Cenário: Caçou, comeu e ficou doente
+        Quando o Hunter caçar 1 vezes
+        Quando o Hunter comer 4 vezes
         Então o Hunter fica com 0 refeições
         E o Hunter ficará doente
 
@@ -35,3 +31,9 @@ Funcionalidade: Hunter
         E o Hunter der 2 refeições pro Traveler
         Então o Hunter fica com 5 refeições
         E o Traveler fica com 4 refeições
+
+    Cenário: Caçou e deu 8 refeições pra um Traveler
+        Quando o Hunter caçar 1 vezes
+        E o Hunter der 8 refeições pro Traveler
+        Então o Hunter fica com 7 refeições
+        E o Traveler fica com 2 refeições

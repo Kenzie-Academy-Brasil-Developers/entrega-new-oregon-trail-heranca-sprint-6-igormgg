@@ -20,12 +20,11 @@ Given('ele sempre começa a viagem sadio.', function () {
 
 /** WHEN */
 
-When('o Doctor sair para caçar {int} vezes', function (int) {
-    for (let contador = 0; contador < int; contador++) {
-        doutor.hunt();
-    }
-    console.log(this.food)
-});
+When('o Doctor comer {int} vezes', function (int) {
+        for (let contador=0; contador < int; contador++) {
+            doutor.eat();
+        }
+    });
 
 When('um Traveler ficar doente', function () {
     viajante.isHealthy = false
@@ -35,12 +34,20 @@ When('o Doctor cura o Traveler', function () {
     doutor.heal(viajante)
 });
 
-/** THEN */
+When('o Doctor cura o Doctor', function () {
+    doutor.heal(doutor)
+  });
 
-Then('a quantidade de comida deve ser igual a {int}', function (int) {
-    assert.strictEqual(doutor.food, int);
-});
+/** THEN */
 
 Then('o Traveler ficará saudável', function () {
     assert.strictEqual(viajante.isHealthy, true)
+});
+
+Then('o Doctor fica doente', function () {
+    assert.strictEqual(doutor.isHealthy, false)
+});
+
+Then('o Doctor ficará saudável', function () {
+    assert.strictEqual(doutor.isHealthy, true)
 });

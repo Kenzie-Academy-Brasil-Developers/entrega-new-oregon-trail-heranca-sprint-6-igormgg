@@ -33,8 +33,7 @@ When('o Hunter comer {int} vezes', function (int) {
 });
 
 When('o Hunter der {int} refeições pro Traveler', function (int) {
-    cacador.giveFood(cacador, int)
-    cacador.food -= int
+    cacador.giveFood(viajante, int)
     });
 
 /** THEN */
